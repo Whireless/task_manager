@@ -1,0 +1,16 @@
+.notification {
+	margin-top: 30px;
+}
+
+.notification__title {
+	font-weight: 200;
+	text-align: center;
+	line-height: 40px;
+	background-color: blue;
+	// width: max-content;
+	margin: 0 auto;
+	padding: 15px 20px;
+	border-radius: $radius;
+
+	&--hidden {}
+}

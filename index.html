@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<title>Task Manager</title>
+</head>
+<body>
+	<header class="main-header">
+		<div class="container">
+			<h1 class="main-header__title">Менеджер задач</h1>
+		</div>
+	</header>
+	<main class="main-content">
+		<div class="container">
+			<section class="manage">
+				<input class="manage__input" placeholder="Название списка (от 4 до 20 символов)" minlength="5" maxlength="20">
+				<button class="manage__button manage__button--add" type="button">Создать список задач</button>
+			</section>
+			<!-- <section class="notification">
+				<h2 class="notification__title">Чтобы появился список задач, введите свою первую задачу в поле выше</h2>
+			</section> -->
+			<section class="tasks">
+				<article class="tasks__all-lists"></article>
+			</section>
+		</div>
+	</main>
+	<footer class="main-footer">
+		<div class="container">
+			<article class="main-footer__info">
+				<p class="main-footer__version">v1.0.0</p>
+				<p class="main-footer__copyright">Все права защищены © Copyright 2025</p>
+			</article>
+		</div>
+	</footer>
+	<section class="popup popup--no-clear">
+		<article class="popup__info">
+			<p class="popup__text">Удалить список?</p>
+			<div class="popup__buttons">
+				<button class="popup__button popup__button--yes" type="button">Да</button>
+				<button class="popup__button popup__button--no" type="button">Нет</button>
+			</div>
+		</article>
+	</section>
+	<script src="/src/js/index.js" type="module"></script>
+</body>
+</html>

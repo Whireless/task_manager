@@ -1,0 +1,204 @@
+.tasks {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.tasks__all-lists {
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+
+	@media (min-width: $desktop) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		// align-items: center;
+		align-items: start;
+		justify-content: center;
+		// gap: 60px;
+		gap: 75px;
+	}
+}
+
+.tasks__block {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: $white;
+	width: 280px;
+	margin: 0 auto;
+	padding: 20px 25px;
+	box-shadow: 3px 3px 15px 3px $dark;
+	border-radius: $radius;
+	opacity: 0;
+	transform: translateY(-100%);
+	transition: $transition;
+	z-index: -1;
+
+	&--active {
+		position: static;
+		opacity: 1;
+		transform: translateY(0);
+		z-index: 1;
+	}
+
+	@media (min-width: $tablet) {
+		width: 400px;
+	}
+
+	@media (min-width: $desktop) {
+		margin: 0;
+	}
+}
+
+.tasks__title {
+	color: $black;
+	position: relative;
+	border-bottom: 1px solid $black;
+	padding-bottom: 7px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 6px;
+		right: -30px;
+		width: 16px;
+		height: 16px;
+		background-image: url("../icons/edit.svg");
+		background-repeat: no-repeat;
+	}
+}
+
+.tasks__manage {
+	display: flex;
+	align-items: center;
+	column-gap: 13px;
+	margin-top: 15px;
+}
+
+.tasks__input {
+	font-size: 15px;
+	padding: 7px 15px;
+	border: 1px solid $green;
+	border-radius: $radius;
+}
+
+.tasks__list {
+	color: $black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 15px;
+	// width: 100%;
+	margin-top: 30px;
+	padding: 5px;
+	overflow-y: auto;
+}
+
+.tasks__item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	column-gap: 10px;
+	width: 250px;
+	padding: 7px 10px;
+	box-shadow: 1px 1px 5px 1px $dark;
+	border-radius: $radius;
+	transition: $transition;
+	transform: translateY(-100%);
+	opacity: 0;
+
+	&--show {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	&--complete {
+		color: $green;
+
+		.tasks__task {
+			text-decoration-line: line-through;
+		}
+	}
+
+	@media (min-width: $tablet) {
+		width: 370px;
+		padding: 10px 15px;
+	}
+}
+
+.tasks__task {
+	overflow-wrap: break-word;
+	width: 195px;
+	padding: 4px 8px;
+	transition: $transition;
+
+	@media (min-width: $tablet) {
+		width: 310px;
+	}
+}
+
+.tasks__label {
+	background-image: url("../icons/check-off.svg");
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 21px;
+	cursor: pointer;
+
+	&:has(.tasks__status:checked) {
+		background-image: url("../icons/check-on.svg");
+	}
+
+	@media (min-width: $tablet) {
+		width: 25px;
+		height: 25px;
+	}
+}
+
+.tasks__status {
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+.tasks__button {
+	display: block;
+
+	&--add {
+		width: 34px;
+		height: 34px;
+		background-image: url("../icons/add.svg");
+		background-repeat: no-repeat;
+		background-color: transparent;
+		border-radius: 50%;
+		border: none;
+		cursor: pointer;
+		transition: $transition;
+
+		&:hover {
+			opacity: 0.5;
+		// 	transform: scale(1.15);
+		}
+	}
+
+	&--clear {
+		color: $white;
+		background-color: $red;
+		margin-top: 20px;
+		padding: 10px 30px;
+		border: none;
+		border-radius: $radius;
+		cursor: pointer;
+		transition: $transition;
+		box-shadow: 1px 1px 5px 1px $dark;
+
+		&:hover {
+			color: rgba(255, 255, 255, 0.3);
+			background: rgba(0, 0, 0, 0.7);
+		}
+
+		@media (min-width: $tablet) {
+			font-size: 16px;
+		}
+	}
+}

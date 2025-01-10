@@ -1,0 +1,61 @@
+.manage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: max-content;
+	// margin: 30px auto 0 auto;
+	margin: 0 auto;
+	padding: 30px;
+	border-radius: $radius;
+	box-shadow: 1px 1px 15px 1px $dark;
+
+	@media (min-width: $tablet) {
+		margin: 10px auto 0 auto;
+	}
+}
+
+.manage__input {
+	width: 230px;
+	padding: 15px 20px;
+	border-radius: $radius;
+	border: none;
+
+	@media (min-width: $tablet) {
+		font-size: 17px;
+		width: 350px;
+
+		&::placeholder {
+			font-size: 16px;
+		}
+	}
+}
+
+.manage__button {
+	font-size: 15px;
+	color: $black;
+	width: max-content;
+	background-color: $white;
+	padding: 10px 30px;
+	margin-top: 25px;
+	border: none;
+	border-radius: $radius;
+	cursor: pointer;
+	transition: $transition;
+	// box-shadow: 1px 1px 5px 1px $dark;
+
+	&:not(:disabled):hover {
+		color: $white;
+		background-color: $black;
+		box-shadow: 1px 1px 5px 1px $dark;
+	}
+
+	&:disabled {
+		cursor: auto;
+		background-color: $grey;
+	}
+
+	@media (min-width: $tablet) {
+		font-size: 16px;
+		margin-top: 40px;
+	}
+}

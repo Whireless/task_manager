@@ -1,0 +1,14 @@
+.main-footer {
+	border-top: 1px solid $white;
+}
+
+.main-footer__info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@media (min-width: $tablet) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}

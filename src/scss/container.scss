@@ -1,0 +1,16 @@
+.container {
+	margin: 0 auto;
+	padding: 15px 20px;
+
+	@media (min-width: $tablet) {
+		padding: 20px 40px;
+	}
+
+	@media (min-width: $desktop) {
+		padding: 30px 60px;
+	}
+
+	@media (min-width: $laptop) {
+		padding: 40px 80px;
+	}
+}
